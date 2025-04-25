@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.bookwise.auth.mapper.RefreshTokenMapper">
+    <insert id="insertRefreshToken" parameterType="com.project.bookwise.auth.domain.RefreshToken">
+        INSERT INTO REFRESH_TOKEN_INFO(token, user_id, expired_at, issued_at)
+        VALUES (#{token}, #{userId}, #{expiredAt}, #{issuedAt})
+
+        <selectKey resultType="long" keyProperty="id" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+</mapper>
