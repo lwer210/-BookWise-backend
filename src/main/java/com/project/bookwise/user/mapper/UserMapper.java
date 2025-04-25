@@ -8,7 +8,9 @@ public interface UserMapper {
 
     int insertUser(User user);
 
-    User getUserInfo(Long id);
+    User getUserInfoById(Long id);
 
     boolean existsUserInfo(String userId);
+
+    User getUserInfoByUserId(String userId);
 }
